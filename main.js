@@ -18,13 +18,17 @@ async function getData(url) {
 async function sugerirFilme(ev) {
     filmesInput = document.querySelector("#filmes");
     filmesInput.innerHTML = "";
+    filmesDiv = document.querySelector("#filmesDiv");
+
     if (ev.target.value == "") return;
     results = await getData("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + ev.target.value + "&page=1&include_adult=true");
     filmes = results.results;
     for (filme of filmes) {
-        option = document.createElement("option");
-        option.value = filme.original_title;
-        filmesInput.appendChild(option);
+        //option = document.createElement("option");
+        //option.value = filme.original_title;
+        //filmesInput.appendChild(option);
+        option = '<option class="dropdown-item" value="' + filme.id + '"><a href="#" class="dropdown-item">' + filme.original_title + '</a></option>'
+        filmesDiv.insertAdjacentHTML('beforeend', option);
     }
 
 }
