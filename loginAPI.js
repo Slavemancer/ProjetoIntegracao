@@ -12,8 +12,8 @@ app.get("/filmes/:id", function(req, res) {
     });
 });
 
-app.get("/filmes/", function(req, res) {
-    filmes = foo['filmes'];
+app.get("/filmes/:id/", function(req, res) {
+    filmes = foo[''];
 
     res.send(filmes);
 });
