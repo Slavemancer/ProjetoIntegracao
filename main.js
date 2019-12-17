@@ -17,18 +17,41 @@ async function getData(url) {
 
 async function sugerirFilme(ev) {
     filmesInput = document.querySelector("#filmes");
-    filmesInput.innerHTML = "";
+    //filmesInput.innerHTML = "";
     filmesDiv = document.querySelector("#filmesDiv");
 
-    if (ev.target.value == "") return;
+    if (ev.target.value == "") {
+        $("#filmesDiv").hide();
+        return;
+    }
+    filmesDiv.innerHTML = "";
     results = await getData("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + ev.target.value + "&page=1&include_adult=true");
+
+    if (!results.total_results) {
+        $("#filmesDiv").hide();
+        return;
+    }
     filmes = results.results;
     for (filme of filmes) {
         //option = document.createElement("option");
         //option.value = filme.original_title;
         //filmesInput.appendChild(option);
-        option = '<option class="dropdown-item" value="' + filme.id + '"><a href="#" class="dropdown-item">' + filme.original_title + '</a></option>'
+        //option = '<option class="dropdown-item" value="' + filme.id + '"><a href="#" class="dropdown-item">' + filme.original_title + '</a></option>'
+        option = '<a id="ahref' + filme.id + '" href="#'" class="dropdown-item">' + filme.original_title + '</a>'
         filmesDiv.insertAdjacentHTML('beforeend', option);
     }
+    hrefs = filmesDiv.children;
+    for (href of hrefs)
+        href.addEventListener("click", carregarFilme)
+    $("#filmesDiv").show();
+
+}
+
+async function carregarFilme(ev) {
+    id = ev.target.id.substring(5);
+    filme = await getData("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + key + "&language=en-US");
+    document.querySelector("#movie-img").src = "https://image.tmdb.org/t/p/w500/" + filme.poster_path;
+    document.querySelector("#movie-title").innerText = filme.original_title;
+    document.querySelector("#movie-text").innerText = filme.overview;
 
 }
