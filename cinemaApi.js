@@ -2,7 +2,7 @@ const express = require('express');
 const foo = require('../db.json')
 const app = express();
 
-app.get("/filmes/:id", function (req, res) {
+app.get("/filmes/:id", function(req, res) {
     filmes = foo['filmes'];
 
     filmes.forEach(filme => {
@@ -12,7 +12,7 @@ app.get("/filmes/:id", function (req, res) {
     });
 });
 
-app.get("/filmes/:id/", function (req, res) {
+app.get("/filmes/:id/", function(req, res) {
     filmes = foo[''];
 
     res.send(filmes);
