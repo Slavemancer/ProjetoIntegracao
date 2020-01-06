@@ -1,5 +1,5 @@
 const express = require('express');
-const foo = require('../db.json')
+const foo = require('./db.json')
 const app = express();
 
 app.get("/filmes/:id", function(req, res) {
@@ -18,7 +18,9 @@ app.get("/filmes/:id/", function(req, res) {
     res.send(filmes);
 });
 
-
+app.get('/', function(req, res) {
+    res.sendFile('/index.html', { root: __dirname })
+});
 
 
 
