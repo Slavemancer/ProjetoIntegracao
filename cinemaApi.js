@@ -18,7 +18,9 @@ app.get("/filmes/:id/", function(req, res) {
     res.send(filmes);
 });
 
-
+app.get('/', function(req, res) {
+    res.sendFile('/index.html', { root: __dirname })
+});
 
 
 
