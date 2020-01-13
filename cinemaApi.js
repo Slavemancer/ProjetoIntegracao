@@ -2,6 +2,8 @@ const express = require('express');
 const foo = require('./db.json')
 const app = express();
 
+app.use(express.static('public'))
+
 app.get("/filmes/:id", function(req, res) {
     filmes = foo['filmes'];
 
@@ -18,10 +20,7 @@ app.get("/filmes/:id/", function(req, res) {
     res.send(filmes);
 });
 
-app.get('/', function(req, res) {
-    res.sendFile('/index.html', { root: __dirname })
-});
-
 
 
 app.listen(3000);
+console.log("A ouvir porta 3000");
