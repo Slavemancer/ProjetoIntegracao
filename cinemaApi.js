@@ -2,6 +2,8 @@ const express = require('express');
 const foo = require('./db.json')
 const app = express();
 
+app.use(express.static('public'));
+
 app.get("/filmes/id/:id", function(req, res) {
     filmes = foo['filmes'];
 

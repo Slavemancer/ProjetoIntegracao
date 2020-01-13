@@ -26,7 +26,7 @@ async function sugerirFilme(ev) {
     }
     filmesDiv.innerHTML = "";
 
-    filmes = await getData("localhost:3000/filmes/titulo/" + ev.target.value);
+    filmes = await getData("http://localhost:3000/filmes/titulo/" + ev.target.value);
 
 
     for (filme of filmes) {
