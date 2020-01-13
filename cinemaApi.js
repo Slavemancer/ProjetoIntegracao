@@ -28,10 +28,7 @@ app.get("/filmes/titulo/:original_title", function(req, res) {
 
 });
 
-app.get('/', function(req, res) {
-    res.sendFile('/index.html', { root: __dirname })
-});
-
 
 
 app.listen(3000);
+console.log("A ouvir porta 3000");
