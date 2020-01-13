@@ -30,6 +30,15 @@ app.get("/filmes/titulo/:original_title", function(req, res) {
 
 });
 
+app.post("/login", function(req, res) {
+
+    var username = req.body.username;
+    var password = req.body.password;
+
+    res.send("user: " + username + " pass: " + password);
+
+});
+
 
 
 app.listen(3000);
