@@ -25,13 +25,10 @@ async function sugerirFilme(ev) {
         return;
     }
     filmesDiv.innerHTML = "";
-    results = await getData("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + ev.target.value + "&page=1&include_adult=true");
 
-    if (!results.total_results) {
-        $("#filmesDiv").hide();
-        return;
-    }
-    filmes = results.results;
+    filmes = await getData("localhost:3000/filmes/titulo/" + ev.target.value);
+
+
     for (filme of filmes) {
         //option = document.createElement("option");
         //option.value = filme.original_title;
@@ -53,5 +50,37 @@ async function carregarFilme(ev) {
     document.querySelector("#movie-img").src = "https://image.tmdb.org/t/p/w500/" + filme.poster_path;
     document.querySelector("#movie-title").innerText = filme.original_title;
     document.querySelector("#movie-text").innerText = filme.overview;
+
+}
+
+async function sugerirFilmeAPI(ev) {
+    filmesInput = document.querySelector("#filmes");
+    //filmesInput.innerHTML = "";
+    filmesDiv = document.querySelector("#filmesDiv");
+
+    if (ev.target.value == "") {
+        $("#filmesDiv").hide();
+        return;
+    }
+    filmesDiv.innerHTML = "";
+    results = await getData("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + ev.target.value + "&page=1&include_adult=true");
+
+    if (!results.total_results) {
+        $("#filmesDiv").hide();
+        return;
+    }
+    filmes = results.results;
+    for (filme of filmes) {
+        //option = document.createElement("option");
+        //option.value = filme.original_title;
+        //filmesInput.appendChild(option);
+        //option = '<option class="dropdown-item" value="' + filme.id + '"><a href="#" class="dropdown-item">' + filme.original_title + '</a></option>'
+        option = '<a id="ahref' + filme.id + '" href="#" class="dropdown-item">' + filme.original_title + '</a>';
+        filmesDiv.insertAdjacentHTML('beforeend', option);
+    }
+    hrefs = filmesDiv.children;
+    for (href of hrefs)
+        href.addEventListener("click", carregarFilme)
+    $("#filmesDiv").show();
 
 }
