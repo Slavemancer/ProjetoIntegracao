@@ -1,9 +1,18 @@
 const express = require('express');
 const foo = require('./db.json')
+const bodyParser = require('body-parser');
 const app = express();
 
+<<
+<< << < HEAD
 app.use(express.static('public'));
 
+===
+=== =
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); >>>
+>>> > 8 d07d988ea985bacf59fe7611ac32adfcfbd345b
 app.get("/filmes/id/:id", function(req, res) {
     filmes = foo['filmes'];
 
