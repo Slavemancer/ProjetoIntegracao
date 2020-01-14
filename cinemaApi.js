@@ -1,7 +1,11 @@
 const express = require('express');
 const foo = require('./db.json')
+const bodyParser = require('body-parser');
 const app = express();
 
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.get("/filmes/id/:id", function(req, res) {
     filmes = foo['filmes'];
 
@@ -28,6 +32,10 @@ app.get("/filmes/titulo/:original_title", function(req, res) {
 
 });
 
+app.post("/login/", function(req, res) {
+    console.log('Got body:', req.body);
+    res.send(req.body);
+})
 
 
 app.listen(3000);
