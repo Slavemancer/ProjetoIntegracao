@@ -2,17 +2,13 @@ const express = require('express');
 const foo = require('./db.json')
 const bodyParser = require('body-parser');
 const app = express();
+const fs = require('fs');
 
-<<
-<< << < HEAD
+
 app.use(express.static('public'));
-
-===
-=== =
-app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()); >>>
->>> > 8 d07d988ea985bacf59fe7611ac32adfcfbd345b
+app.use(bodyParser.json());
+
 app.get("/filmes/id/:id", function(req, res) {
     filmes = foo['filmes'];
 
@@ -39,7 +35,7 @@ app.get("/filmes/titulo/:original_title", function(req, res) {
 
 });
 
-app.post("/login", function(req, res) {
+app.post("/login/", function(req, res) {
 
     var username = req.body.username;
     var password = req.body.password;
@@ -49,12 +45,29 @@ app.post("/login", function(req, res) {
 });
 
 
-app.post('/registo', function(req, res) {
+app.post('/registo/', function(req, res) {
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
 
-    res.send(username + email + password);
+    fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            obj = JSON.parse(data); //now it an object
+            nextId = obj.users.lenght + 1;
+            newUser = { "id": nextId, "username": username, "email": email, "password": password };
+            obj.users.push(newUser); //add some data
+            json = JSON.stringify(obj); //convert it back to json
+            fs.writeFile('db.json', json, 'utf8', function() {
+                console.log(obj.users);
+                console.log(obj.users.lenght);
+            }); // write it back 
+
+        }
+    });
+
+    res.sendStatus(202);
 });
 
 
