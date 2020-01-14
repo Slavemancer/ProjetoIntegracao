@@ -40,6 +40,14 @@ app.post("/login", function(req, res) {
 });
 
 
+app.post('/registo', function(req, res) {
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+
+    res.send(username + email + password);
+});
+
 
 app.listen(3000);
 console.log("A ouvir porta 3000");
