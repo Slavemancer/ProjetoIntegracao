@@ -1,12 +1,18 @@
 {
     "users": [{
-            "id": 5,
+            "id": 0,
             "username": "joao",
             "email": "esperoquesejaoid1",
             "password": "pass2"
         },
         {
             "id": 1,
+            "username": "joao",
+            "email": "esperoquesejaoid1",
+            "password": "pass2"
+        },
+        {
+            "id": 2,
             "username": "joao",
             "email": "esperoquesejaoid1",
             "password": "pass2"
