@@ -1,19 +1,16 @@
 {
     "users": [{
-            "id": 1,
-            "username": "test",
-            "email": "test@test.com",
-            "password": "testeP"
+            "id": 5,
+            "username": "joao",
+            "email": "esperoquesejaoid1",
+            "password": "pass2"
         },
         {
-            "id": null,
-            "username": "jrafa",
-            "email": "jmcr96@hotmail.com",
-            "password": "ddd"
-        },
-        { "id": null, "username": "kokook", "email": "ddddd", "password": "fff" },
-        { "id": null, "username": "ddd", "email": "ddd", "password": "ddd" },
-        { "id": 6, "username": "ddd", "email": "ddd", "password": "ddd" }
+            "id": 1,
+            "username": "joao",
+            "email": "esperoquesejaoid1",
+            "password": "pass2"
+        }
     ],
     "salas": [{ "id": 1, "nome": "Sala 1", "nrLugares": 20, "nrOcupados": 0 }],
     "filmes": [{

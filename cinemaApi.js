@@ -55,7 +55,7 @@ app.post('/registo/', function(req, res) {
             console.log(err);
         } else {
             obj = JSON.parse(data); //now it an object
-            nextId = Object.keys(obj).length;
+            nextId = Object.keys(obj.users).length + 1;
             newUser = { "id": nextId, "username": username, "email": email, "password": password };
             obj.users.push(newUser); //add some data
             json = JSON.stringify(obj); //convert it back to json
