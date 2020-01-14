@@ -55,13 +55,12 @@ app.post('/registo/', function(req, res) {
             console.log(err);
         } else {
             obj = JSON.parse(data); //now it an object
-            nextId = obj.users.lenght + 1;
+            nextId = Object.keys(obj).length + 1;
             newUser = { "id": nextId, "username": username, "email": email, "password": password };
             obj.users.push(newUser); //add some data
             json = JSON.stringify(obj); //convert it back to json
             fs.writeFile('db.json', json, 'utf8', function() {
-                console.log(obj.users);
-                console.log(obj.users.lenght);
+                console.log("sucesso");
             }); // write it back 
 
         }
