@@ -2,9 +2,10 @@ const express = require('express');
 const foo = require('./db.json')
 const bodyParser = require('body-parser');
 const app = express();
+const session = require('express-session');
 const fs = require('fs');
 
-
+app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -56,6 +57,8 @@ app.post("/login/", function(req, res) {
             });
 
             if (autenticado === true) {
+                sess = req.session;
+                sess.username = username;
                 res.redirect(301, "http://localhost:3000/index.html");
             } else {
                 res.send("<script LANGUAGE='JavaScript'>window.alert('Dados inválidos');window.location.href = 'login.html'; </script>");
@@ -72,7 +75,13 @@ app.post('/registo/', function(req, res) {
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
-
+    var users = foo["users"];
+    users.forEach(user => {
+        if (user.username == username || user.email == email) {
+            res.send("<script LANGUAGE='JavaScript'>window.alert('Dados inválidos');window.location.href = 'registo.html'; </script>");
+            res.end();
+        }
+    })
     fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
         if (err) {
             console.log(err);
