@@ -55,18 +55,19 @@ app.post('/registo/', function(req, res) {
             console.log(err);
         } else {
             obj = JSON.parse(data); //now it an object
-            nextId = Object.keys(obj.users).length;
+            nextId = obj.users.length;
             newUser = { "id": nextId, "username": username, "email": email, "password": password };
             obj.users.push(newUser); //add some data
             json = JSON.stringify(obj); //convert it back to json
             fs.writeFile('db.json', json, 'utf8', function() {
                 console.log("sucesso");
             }); // write it back 
+            res.send("<html><script>window.location.href = '/login.html';</script></html>");
 
         }
     });
 
-    res.sendStatus(202);
+    //res.sendStatus(202);
 });
 
 
