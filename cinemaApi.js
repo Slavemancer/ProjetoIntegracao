@@ -39,8 +39,34 @@ app.post("/login/", function(req, res) {
 
     var username = req.body.username;
     var password = req.body.password;
+    var autenticado = false;
 
-    res.send("user: " + username + " pass: " + password);
+    fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            obj = JSON.parse(data);
+
+            users = obj.users;
+
+
+
+            users.forEach(user => {
+                if (user['username'] == username && user['password'] == password) {
+                    autenticado = true;
+                }
+            });
+
+            if (autenticado === true) {
+
+                res.redirect(301, "http://localhost:3000/index.html");
+            } else {
+                res.send("<script LANGUAGE='JavaScript'>window.alert('Dados inválidos');window.location.href = 'login.html'; </script>");
+            }
+
+        }
+    });
+
 
 });
 
