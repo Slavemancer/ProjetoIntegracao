@@ -12,11 +12,43 @@
             "password": "pass2"
         },
         {
-            "id": 2,
+            "id": 5,
             "username": "joao",
             "email": "esperoquesejaoid1",
             "password": "pass2"
-        }
+        },
+        {
+            "id": 3,
+            "username": "joao",
+            "email": "esperoquesejaoid1",
+            "password": "pass2"
+        },
+        {
+            "id": 4,
+            "username": "joao",
+            "email": "esperoquesejaoid1",
+            "password": "pass2"
+        },
+        {
+            "id": 5,
+            "username": "joao",
+            "email": "esperoquesejaoid1",
+            "password": "ddd"
+        },
+        { "id": 6, "username": "joao", "email": "email", "password": "passssss" },
+        { "id": 7, "username": "joao", "email": "email", "password": "passsss" },
+        { "id": 8, "username": "joao", "email": "email", "password": "ssss" },
+        { "id": 9, "username": "fddd", "email": "adasd", "password": "dadad" },
+        { "id": 10, "username": "fddd", "email": "adasd", "password": "dsdd" },
+        { "id": 11, "username": "fddd", "email": "adasd", "password": "eeee" },
+        { "id": 12, "username": "fddd", "email": "adasd", "password": "sss" },
+        { "id": 13, "username": "fddd", "email": "adasd", "password": "sss" },
+        { "id": 14, "username": "fddd", "email": "adasd", "password": "sss" },
+        { "id": 15, "username": "fddd", "email": "adasd", "password": "sss" },
+        { "id": 16, "username": "fddd", "email": "adasd", "password": "asdaa" },
+        { "id": 17, "username": "fddd", "email": "adasd", "password": "aaaa" },
+        { "id": 18, "username": "fddd", "email": "adasd", "password": "aaaa" },
+        { "id": 19, "username": "asdasd", "email": "asdasd", "password": "fadfaf" }
     ],
     "salas": [{ "id": 1, "nome": "Sala 1", "nrLugares": 20, "nrOcupados": 0 }],
     "filmes": [{

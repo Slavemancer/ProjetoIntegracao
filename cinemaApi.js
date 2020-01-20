@@ -49,24 +49,38 @@ app.post('/registo/', function(req, res) {
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
+    var status = 202;
 
     fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
         if (err) {
             console.log(err);
         } else {
-            obj = JSON.parse(data); //now it an object
+            obj = JSON.parse(data);
             nextId = Object.keys(obj.users).length;
             newUser = { "id": nextId, "username": username, "email": email, "password": password };
-            obj.users.push(newUser); //add some data
-            json = JSON.stringify(obj); //convert it back to json
-            fs.writeFile('db.json', json, 'utf8', function() {
-                console.log("sucesso");
-            }); // write it back 
+            obj.users.push(newUser);
+            json = JSON.stringify(obj);
+            fs.writeFile('db.json', json, 'utf8', function(err) {
+
+                if (err) {
+                    console.log(err);
+                    status = 404;
+                } else {
+                    status = 301;
+                }
+            });
 
         }
     });
 
-    res.sendStatus(202);
+    if (status == 301) {
+        res.redirect(301, "http://localhost:3000/login.html");
+
+    } else {
+        res.redirect(302, "http://localhost:3000/registo.html");
+    }
+
+    res.end();
 });
 
 
