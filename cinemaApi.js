@@ -39,8 +39,31 @@ app.post("/login/", function(req, res) {
 
     var username = req.body.username;
     var password = req.body.password;
+    var autenticado = false;
 
-    res.send("user: " + username + " pass: " + password);
+    fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            obj = JSON.parse(data);
+
+            users = obj.users;
+
+            users.forEach(user => {
+                if (user['username'] == username && user['password'] == password) {
+                    autenticado = true;
+                }
+            });
+
+            if (autenticado === true) {
+                res.redirect(301, "http://localhost:3000/index.html");
+            } else {
+                res.send("<script LANGUAGE='JavaScript'>window.alert('Dados inválidos');window.location.href = 'login.html'; </script>");
+            }
+
+        }
+    });
+
 
 });
 
@@ -49,7 +72,6 @@ app.post('/registo/', function(req, res) {
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
-    var status = 202;
 
     fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
         if (err) {
@@ -64,23 +86,15 @@ app.post('/registo/', function(req, res) {
 
                 if (err) {
                     console.log(err);
-                    status = 404;
+                    res.send("<script LANGUAGE='JavaScript'>window.alert('Erro durante o registo, tente novamente');window.location.href = 'registo.html'; </script>");
                 } else {
-                    status = 301;
+                    console.log("chegou aqui");
+                    res.redirect(301, "http://localhost:3000/login.html");
                 }
             });
 
         }
     });
-
-    if (status == 301) {
-        res.redirect(301, "http://localhost:3000/login.html");
-
-    } else {
-        res.redirect(302, "http://localhost:3000/registo.html");
-    }
-
-    res.end();
 });
 
 
