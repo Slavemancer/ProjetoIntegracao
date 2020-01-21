@@ -14,8 +14,6 @@ app.use(bodyParser.json());
 
 app.get("/filmes", function(req, res) {
     filmes = foo['filmes'];
-    res.header("Access-Control-Allow-Origin", "http:127.0.0.1");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept");
     res.send(filmes);
 });
 
