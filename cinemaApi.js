@@ -1,20 +1,30 @@
 const express = require('express');
+const session = require('express-session');
 const foo = require('./db.json')
 const bodyParser = require('body-parser');
 const app = express();
-const session = require('express-session');
 const fs = require('fs');
+var path = require("path");
 
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+app.get("/filmes", function(req, res) {
+    filmes = foo['filmes'];
+    res.header("Access-Control-Allow-Origin", "http:127.0.0.1");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept");
+    res.send(filmes);
+});
+
 app.get("/filmes/id/:id", function(req, res) {
     filmes = foo['filmes'];
 
     filmes.forEach(filme => {
         if (filme.id == req.params.id) {
+
             res.send(filme);
 
         }
@@ -78,7 +88,7 @@ app.post('/registo/', function(req, res) {
     var users = foo["users"];
     users.forEach(user => {
         if (user.username == username || user.email == email) {
-            res.send("<script LANGUAGE='JavaScript'>window.alert('Dados inválidos');window.location.href = 'registo.html'; </script>");
+            res.send("<script LANGUAGE='JavaScript'>window.alert('O Utilizador/Email já está a ser utilizado');window.location.href = 'registo.html'; </script>");
             res.end();
         }
     })
