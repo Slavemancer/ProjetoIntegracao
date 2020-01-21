@@ -11,6 +11,18 @@ async function getData(url) {
 
 async function init() {
     dias = document.querySelector("#dias");
+    dias.addEventListener("change", function() { console.log(dias.value) })
+
+    sessoes = await getData("http://localhost:3000/sessoes/3");
+
+    sessoes.forEach(sessao => {
+
+        value = [];
+        value.push(sessao.dia);
+        value.push(sessao.horario);
+        option = "<option value=" + value + ">" + sessao.dia + "</option>";
+        dias.insertAdjacentHTML('beforeend', option);
+    });
 
 
 }
