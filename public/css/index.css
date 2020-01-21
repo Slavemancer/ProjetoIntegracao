@@ -83,10 +83,17 @@ body {
 
 .Footer {
     grid-area: Footer;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }
 
 .footer-basic {
-    padding: 40px 0;
+    padding: 20px 0;
     background-color: #ffffff;
     color: #4b4c4d;
 }
