@@ -11,7 +11,7 @@ async function getData(url) {
 
 async function init() {
     dias = document.querySelector("#dias");
-    dias.addEventListener("change", function() { console.log(dias.value) })
+    dias.addEventListener("change", addHorarios)
 
     sessoes = await getData("http://localhost:3000/sessoes/3");
 
@@ -23,6 +23,19 @@ async function init() {
         option = "<option value=" + value + ">" + sessao.dia + "</option>";
         dias.insertAdjacentHTML('beforeend', option);
     });
+
+
+}
+
+async function addHorarios(evt) {
+    horarios = document.querySelector("#horarios");
+    horarios.innerHTML = "";
+
+    horas = evt.target.value.split(",")[1];
+
+
+    option = "<option value=" + horas + ">" + horas + "h</option>";
+    horarios.insertAdjacentHTML('beforeend', option);
 
 
 }
