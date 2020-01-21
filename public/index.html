@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Cinema</title>
+    <title>O nosso Cinema</title>
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Cinema</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,86 +38,40 @@
             <form class="form-inline my-2 my-lg-0">
                 <input id="procurarFilme" autocomplete="off" class="form-control mr-sm-2 dropdown-toggle" list="filmes" type="text" placeholder="Procurar Filmes" aria-label="Search">
                 <div class="dropdown">
-                    <div class="dropdown-content" id="filmesDiv"></div>
+                    <div class="dropdown-content" id="filmesDiv">
+                    </div>
                 </div>
             </form>
         </div>
     </nav>
 
-    <div class="grid-container">
-        <!-- start grid global-->
-        <div class="Poster">
-            <!-- start poster-->
-
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- start carousel slide-->
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner">
-                    <!-- start carousel-inner-->
-
-                    <div class="item active">
-                        <!-- start item-->
-                        <div class="poster-grid-container" style="background-color: #3e8e41;">
-                            <!-- start poster grid-container-->
-
-                            <div class="poster-imagem">
-                                <!-- start poster imagem-->
-                                <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/mt0ELw83HIRgaKaDzhsDcIi0RnW.jpg" alt="Chania">
-                            </div>
-                            <!-- end poster imagem-->
-
-                            <div class="poster-detalhes">
-                                <!-- start poster detalhes-->
-                                <p>Teste</p>
-                            </div>
-                            <!-- end poster detalhes-->
-
-
-
-
-
-                        </div>
-                        <!-- end poster grid-container-->
-                    </div>
-                    <!-- end item-->
-                </div>
-                <!-- end carousel-inner-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <a class="no_click progressive" href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg" data-srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg 2x"
+                    data-sizes="auto" style="cursor: default;"><img srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg 2x" sizes="auto" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg"
+                        class="" alt="The Godfather"></a>
             </div>
-            <!-- end carousel slide-->
-        </div>
-        <!-- end poster-->
+            <div class="col-md-3">
+                <a class="no_click progressive" href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" data-srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg 2x"
+                    data-sizes="auto" style="cursor: default;"><img srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg 2x" sizes="auto" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg"
+                        class="" alt="Pulp Fiction"></a>
 
-        <div class="Footer">
-            <!-- start footer-->
-
-            <div class="footer-basic">
-                <footer>
-                    <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
-                                class="icon ion-social-snapchat"></i></a><a href="#"><i
-                                class="icon ion-social-twitter"></i></a><a href="#"><i
-                                class="icon ion-social-facebook"></i></a></div>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#">Home</a></li>
-                        <li class="list-inline-item"><a href="#">Services</a></li>
-                        <li class="list-inline-item"><a href="#">About</a></li>
-                        <li class="list-inline-item"><a href="#">Terms</a></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                    </ul>
-                    <p class="copyright">Company Name © 2018</p>
-                </footer>
             </div>
+            <div class="col-md-3">
+                <a class="no_click progressive" href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg" data-srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg 2x"
+                    data-sizes="auto" style="cursor: default;"><img srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg 2x" sizes="auto" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg"
+                        class="" alt="GoodFellas"></a>
+
+            </div>
+            <div class="col-md-3">
+                <a class="no_click progressive" href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" data-srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg 2x"
+                    data-sizes="auto" style="cursor: default;"><img srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg 2x" sizes="auto" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg"
+                        class="" alt="Spider-Man: Into the Spider-Verse"></a>
+            </div>
+
         </div>
-        <!-- end footer-->
     </div>
-    <!-- end grid global-->
-
 
 
 
@@ -129,8 +82,6 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
