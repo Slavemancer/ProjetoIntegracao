@@ -93,7 +93,7 @@
             "password": "1111"
         }
     ],
-    "salas": [{ "id": 1, "nome": "Sala 1", "nrLugares": 20, "nrOcupados": 0 }],
+    "salas": [{ "id": 1, "nome": "Sala 1" }],
     "filmes": [{
             "popularity": 21.502,
             "vote_count": 4438,
@@ -128,12 +128,86 @@
         }
     ],
     "horarios": [{ "id": 1, "hora": "10:00" }],
-    "sessao": [
-        { "id": 1, "dia": "2019-12-25", "salaId": 1, "filmeId": 1, "horarioId": 1 },
-        { "id": 2, "dia": "2019-12-26", "salaId": 1, "filmeId": 2, "horarioId": 1 },
-        { "id": 3, "dia": "2019-12-27", "salaId": 1, "filmeId": 3, "horarioId": 1 },
-        { "id": 4, "dia": "2019-12-28", "salaId": 1, "filmeId": 4, "horarioId": 1 },
-        { "id": 5, "dia": "2019-12-29", "salaId": 1, "filmeId": 5, "horarioId": 1 },
-        { "id": 6, "dia": "2019-12-30", "salaId": 1, "filmeId": 6, "horarioId": 1 }
+    "sessao": [{
+            "id": 1,
+            "dia": "2019-12-25",
+            "salaId": 1,
+            "filmeId": 1,
+            "horario": 10,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 2,
+            "dia": "2019-12-26",
+            "salaId": 1,
+            "filmeId": 2,
+            "horario": 11,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 3,
+            "dia": "2019-12-27",
+            "salaId": 1,
+            "filmeId": 3,
+            "horario": 12,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 3,
+            "dia": "2019-12-28",
+            "salaId": 1,
+            "filmeId": 3,
+            "horario": 13,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 3,
+            "dia": "2019-12-29",
+            "salaId": 1,
+            "filmeId": 3,
+            "horario": 14,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 3,
+            "dia": "2019-12-30",
+            "salaId": 1,
+            "filmeId": 3,
+            "horario": 15,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 4,
+            "dia": "2019-12-28",
+            "salaId": 1,
+            "filmeId": 4,
+            "horario": 16,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 5,
+            "dia": "2019-12-29",
+            "salaId": 1,
+            "filmeId": 5,
+            "horario": 17,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 6,
+            "dia": "2019-12-30",
+            "salaId": 1,
+            "filmeId": 6,
+            "horario": 18,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        }
     ]
 }

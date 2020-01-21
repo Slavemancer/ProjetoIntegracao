@@ -114,6 +114,22 @@ app.post('/registo/', function(req, res) {
     });
 });
 
+app.get("/sessoes/:filmeId", function(req, res) {
+
+    sessoes = foo['sessao'];
+    temp = [];
+
+    sessoes.forEach(sessao => {
+        if (sessao.filmeId == req.params.filmeId) {
+
+            temp.push(sessao);
+        }
+    });
+
+    res.send(temp);
+
+});
+
 
 app.listen(3000);
 console.log("A ouvir porta 3000");
