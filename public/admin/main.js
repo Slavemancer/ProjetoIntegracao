@@ -1,5 +1,7 @@
-$(document).ready(function() {
-    update();
+$(document).ready(function () {
+    $("#procurar").click((ev) => {
+        update($("#nome").val());
+    });
 });
 apiURL = "http://localhost:3000/"
 async function getData(url) {
@@ -8,12 +10,20 @@ async function getData(url) {
     });
 }
 
-async function update() {
-    filmes = await getData(apiURL + "filmes");
+async function update(string) {
+    filmes = await getData(apiURL + "admin/filmes/" + string);
+    console.log("a carregar filmes");
+    $('#table').html("");
     filmes.forEach(filme => {
-        $('#table tr:last').after('<tr><td>' + filme.title + '</td>' + '<td>' + filme.vote_average + '</td>' + '<td>' + filme.release_date + '</td></tr>');
+        $('#table').html($('#table').html() + '<tr><td>' + filme.title + '</td><td>' + filme.vote_average + '</td><td>' + filme.release_date + '</td><td><button id="' + filme.id + '">Adicionar</button></td></tr>');
         console.log(filme);
     });
+    $('button').click(adicionar);
+}
+
+async function adicionar(ev) {
+    fetch(apiURL + "admin/filmes/adicionar/" + ev.target.id, { method: 'POST' }).then((ans) => { console.log(ans) });
+
 }
 /*<tr>
 <td>Tiger Nixon</td>

@@ -7,18 +7,41 @@ const app = express();
 const fs = require('fs');
 var path = require("path");
 
+key = "18484c8fa21a4003ccf38cd09a432aa8";
+url = "https://api.themoviedb.org/3/search/movie";
+adminurl = "https://api.themoviedb.org/3/movie";
+
+
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+async function getData(url) {
+    return await fetch(url).then((data) => data.json()).then((data) => {
+        return data;
+    });
+}
 
-app.get("/filmes", function(req, res) {
+app.post("/admin/filmes/adicionar/:id", function (req, res) {
+    link = adminurl + "/" + req.params.id + "?api_key=" + key;
+    console.log(link);
+
+    getData(link).then((ans) => res.send(ans));
+
+});
+
+app.get("/admin/filmes/:query", function (req, res) {
+    link = url + "&query=" + req.params.query;
+
+    getData(link).then((ans) => res.send(ans.results));
+});
+app.get("/filmes", function (req, res) {
     filmes = foo['filmes'];
     res.send(filmes);
 });
 
-app.get("/filmes/id/:id", function(req, res) {
+app.get("/filmes/id/:id", function (req, res) {
     filmes = foo['filmes'];
 
     filmes.forEach(filme => {
@@ -30,7 +53,7 @@ app.get("/filmes/id/:id", function(req, res) {
     });
 });
 
-app.get("/filmes/titulo/:original_title", function(req, res) {
+app.get("/filmes/titulo/:original_title", function (req, res) {
 
     filmes = foo['filmes'];
     temp = [];
@@ -45,7 +68,7 @@ app.get("/filmes/titulo/:original_title", function(req, res) {
 
 });
 
-app.post("/login/", function(req, res) {
+app.post("/login/", function (req, res) {
 
     var username = req.body.username;
     var password = req.body.password;
@@ -80,7 +103,7 @@ app.post("/login/", function(req, res) {
 });
 
 
-app.post('/registo/', function(req, res) {
+app.post('/registo/', function (req, res) {
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
@@ -100,7 +123,7 @@ app.post('/registo/', function(req, res) {
             newUser = { "id": nextId, "username": username, "email": email, "password": password };
             obj.users.push(newUser);
             json = JSON.stringify(obj);
-            fs.writeFile('db.json', json, 'utf8', function(err) {
+            fs.writeFile('db.json', json, 'utf8', function (err) {
 
                 if (err) {
                     console.log(err);
@@ -115,7 +138,7 @@ app.post('/registo/', function(req, res) {
     });
 });
 
-app.get("/sessoes/:filmeId", function(req, res) {
+app.get("/sessoes/:filmeId", function (req, res) {
 
     sessoes = foo['sessao'];
     temp = [];

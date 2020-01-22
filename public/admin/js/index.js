@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     update();
 });
 apiURL = "http://localhost:3000/"
@@ -9,6 +9,8 @@ async function getData(url) {
 }
 
 async function update() {
+
+
     filmes = await getData(apiURL + "filmes");
     row = "<tr>";
     filmes.forEach(filme => {
