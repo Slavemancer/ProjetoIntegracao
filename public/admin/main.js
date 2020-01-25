@@ -22,7 +22,9 @@ async function update(string) {
 }
 
 async function adicionar(ev) {
-    fetch(apiURL + "admin/filmes/adicionar/" + ev.target.id, { method: 'POST' }).then((ans) => { console.log(ans) });
+    console.log("a adicionar com o id " + ev.target.id);
+
+    fetch(apiURL + "admin/filmes/adicionar/" + ev.target.id, { method: 'POST' }).then((ans) => { console.log(ans.status) });
 
 }
 /*<tr>

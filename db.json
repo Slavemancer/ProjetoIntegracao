@@ -1,5 +1,6 @@
 {
-    "users": [{
+    "users": [
+        {
             "id": 0,
             "username": "joao",
             "email": "esperoquesejaoid1",
@@ -35,20 +36,90 @@
             "email": "esperoquesejaoid1",
             "password": "ddd"
         },
-        { "id": 6, "username": "joao2", "email": "email2", "password": "password" },
-        { "id": 7, "username": "joao", "email": "email", "password": "passsss" },
-        { "id": 8, "username": "joao", "email": "email", "password": "ssss" },
-        { "id": 9, "username": "fddd", "email": "adasd", "password": "dadad" },
-        { "id": 10, "username": "fddd", "email": "adasd", "password": "dsdd" },
-        { "id": 11, "username": "fddd", "email": "adasd", "password": "eeee" },
-        { "id": 12, "username": "fddd", "email": "adasd", "password": "sss" },
-        { "id": 13, "username": "fddd", "email": "adasd", "password": "sss" },
-        { "id": 14, "username": "fddd", "email": "adasd", "password": "sss" },
-        { "id": 15, "username": "fddd", "email": "adasd", "password": "sss" },
-        { "id": 16, "username": "fddd", "email": "adasd", "password": "asdaa" },
-        { "id": 17, "username": "fddd", "email": "adasd", "password": "aaaa" },
-        { "id": 18, "username": "fddd", "email": "adasd", "password": "aaaa" },
-        { "id": 19, "username": "asdasd", "email": "asdasd", "password": "fadfaf" },
+        {
+            "id": 6,
+            "username": "joao2",
+            "email": "email2",
+            "password": "password"
+        },
+        {
+            "id": 7,
+            "username": "joao",
+            "email": "email",
+            "password": "passsss"
+        },
+        {
+            "id": 8,
+            "username": "joao",
+            "email": "email",
+            "password": "ssss"
+        },
+        {
+            "id": 9,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "dadad"
+        },
+        {
+            "id": 10,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "dsdd"
+        },
+        {
+            "id": 11,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "eeee"
+        },
+        {
+            "id": 12,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "sss"
+        },
+        {
+            "id": 13,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "sss"
+        },
+        {
+            "id": 14,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "sss"
+        },
+        {
+            "id": 15,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "sss"
+        },
+        {
+            "id": 16,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "asdaa"
+        },
+        {
+            "id": 17,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "aaaa"
+        },
+        {
+            "id": 18,
+            "username": "fddd",
+            "email": "adasd",
+            "password": "aaaa"
+        },
+        {
+            "id": 19,
+            "username": "asdasd",
+            "email": "asdasd",
+            "password": "fadfaf"
+        },
         {
             "id": 20,
             "username": "alberto",
@@ -67,25 +138,60 @@
             "email": "testeee",
             "password": "password"
         },
-        { "id": 23, "username": "dd", "email": "dd", "password": "dd" },
-        { "id": 24, "username": "dd", "email": "dd", "password": "dd" },
-        { "id": 25, "username": "dd", "email": "dd", "password": "dd" },
-        { "id": 26, "username": "aa", "email": "aa", "password": "aa" },
+        {
+            "id": 23,
+            "username": "dd",
+            "email": "dd",
+            "password": "dd"
+        },
+        {
+            "id": 24,
+            "username": "dd",
+            "email": "dd",
+            "password": "dd"
+        },
+        {
+            "id": 25,
+            "username": "dd",
+            "email": "dd",
+            "password": "dd"
+        },
+        {
+            "id": 26,
+            "username": "aa",
+            "email": "aa",
+            "password": "aa"
+        },
         {
             "id": 27,
             "username": "adniel",
             "email": "danisdfnoqenwf",
             "password": "dflsgjiaeroi"
         },
-        { "id": 28, "username": "dd", "email": "dd", "password": "dd" },
-        { "id": 29, "username": "dd", "email": "dd", "password": "dd" },
+        {
+            "id": 28,
+            "username": "dd",
+            "email": "dd",
+            "password": "dd"
+        },
+        {
+            "id": 29,
+            "username": "dd",
+            "email": "dd",
+            "password": "dd"
+        },
         {
             "id": 30,
             "username": "qweqwe",
             "email": "dfjskgj",
             "password": "jhsdfkgjhwi"
         },
-        { "id": 31, "username": "qweqwe", "email": "rgerg", "password": "rthrh" },
+        {
+            "id": 31,
+            "username": "qweqwe",
+            "email": "rgerg",
+            "password": "rthrh"
+        },
         {
             "id": 32,
             "username": "antrob",
@@ -93,8 +199,14 @@
             "password": "1111"
         }
     ],
-    "salas": [{ "id": 1, "nome": "Sala 1" }],
-    "filmes": [{
+    "salas": [
+        {
+            "id": 1,
+            "nome": "Sala 1"
+        }
+    ],
+    "filmes": [
+        {
             "popularity": 21.502,
             "vote_count": 4438,
             "video": false,
@@ -104,7 +216,12 @@
             "backdrop_path": "/ezXodpP429qK0Av89pVNlaXWJkQ.jpg",
             "original_language": "en",
             "original_title": "Jack Reacher",
-            "genre_ids": [28, 80, 18, 53],
+            "genre_ids": [
+                28,
+                80,
+                18,
+                53
+            ],
             "title": "Jack Reacher",
             "vote_average": 6.4,
             "overview": "When a gunman takes five lives with six shots, all evidence points to the suspect in custody. On interrogation, the suspect offers up a single note: \"Get Jack Reacher!\" So begins an extraordinary chase for the truth, pitting Jack Reacher against an unexpected enemy, with a skill for violence and a secret to keep.",
@@ -120,15 +237,177 @@
             "backdrop_path": "/nDS8rddEK74HfAwCC5CoT6Cwzlt.jpg",
             "original_language": "en",
             "original_title": "Jack Reacher: Never Go Back",
-            "genre_ids": [28, 53],
+            "genre_ids": [
+                28,
+                53
+            ],
             "title": "Jack Reacher: Never Go Back",
             "vote_average": 5.6,
             "overview": "Jack Reacher must uncover the truth behind a major government conspiracy in order to clear his name. On the run as a fugitive from the law, Reacher uncovers a potential secret from his past that could change his life forever.",
             "release_date": "2016-10-19"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/sXSp6NSu3fl52jrAc5l7bUPEBWy.jpg",
+            "belongs_to_collection": null,
+            "budget": 0,
+            "genres": [
+                {
+                    "id": 878,
+                    "name": "Science Fiction"
+                },
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 12,
+                    "name": "Adventure"
+                }
+            ],
+            "homepage": "",
+            "id": 540247,
+            "imdb_id": "tt8783146",
+            "original_language": "en",
+            "original_title": "Jurassic Galaxy",
+            "overview": "In the near future, a ship of space explorers crash land on an unknown planet. They're soon met with some of their worst fears as they discover the planet is inhabited by monstrous dinosaurs.",
+            "popularity": 45.877,
+            "poster_path": "/uo7u2bRW6KPPe4ipTUqx5RZ9rwC.jpg",
+            "production_companies": [
+                {
+                    "id": 86009,
+                    "logo_path": null,
+                    "name": "Dual Visions",
+                    "origin_country": ""
+                }
+            ],
+            "production_countries": [
+                {
+                    "iso_3166_1": "US",
+                    "name": "United States of America"
+                }
+            ],
+            "release_date": "2018-08-20",
+            "revenue": 0,
+            "runtime": 76,
+            "spoken_languages": [
+                {
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "tagline": "",
+            "title": "Jurassic Galaxy",
+            "video": false,
+            "vote_average": 3.4,
+            "vote_count": 40
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/t5KONotASgVKq4N19RyhIthWOPG.jpg",
+            "belongs_to_collection": {
+                "id": 328,
+                "name": "Jurassic Park Collection",
+                "poster_path": "/qIm2nHXLpBBdMxi8dvfrnDkBUDh.jpg",
+                "backdrop_path": "/pJjIH9QN0OkHFV9eue6XfRVnPkr.jpg"
+            },
+            "budget": 150000000,
+            "genres": [
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 12,
+                    "name": "Adventure"
+                },
+                {
+                    "id": 878,
+                    "name": "Science Fiction"
+                },
+                {
+                    "id": 53,
+                    "name": "Thriller"
+                }
+            ],
+            "homepage": "http://www.jurassicworld.com/",
+            "id": 135397,
+            "imdb_id": "tt0369610",
+            "original_language": "en",
+            "original_title": "Jurassic World",
+            "overview": "Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond.",
+            "popularity": 22.678,
+            "poster_path": "/jjBgi2r5cRt36xF6iNUEhzscEcb.jpg",
+            "production_companies": [
+                {
+                    "id": 3341,
+                    "logo_path": "/dTG5dXE1kU2mpmL9BNnraffckLU.png",
+                    "name": "Fuji Television Network",
+                    "origin_country": "JP"
+                },
+                {
+                    "id": 56,
+                    "logo_path": "/cEaxANEisCqeEoRvODv2dO1I0iI.png",
+                    "name": "Amblin Entertainment",
+                    "origin_country": "US"
+                },
+                {
+                    "id": 923,
+                    "logo_path": "/5UQsZrfbfG2dYJbx8DxfoTr2Bvu.png",
+                    "name": "Legendary Entertainment",
+                    "origin_country": "US"
+                },
+                {
+                    "id": 33,
+                    "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+                    "name": "Universal Pictures",
+                    "origin_country": "US"
+                },
+                {
+                    "id": 1778,
+                    "logo_path": "/69xm6sF3JxugGVjfZfm1YY6d7EE.png",
+                    "name": "Dentsu",
+                    "origin_country": "JP"
+                },
+                {
+                    "id": 862,
+                    "logo_path": "/udTjbqPmcTbfrihMuLtLcizDEM1.png",
+                    "name": "The Kennedy/Marshall Company",
+                    "origin_country": "US"
+                }
+            ],
+            "production_countries": [
+                {
+                    "iso_3166_1": "US",
+                    "name": "United States of America"
+                }
+            ],
+            "release_date": "2015-06-06",
+            "revenue": 1671713208,
+            "runtime": 124,
+            "spoken_languages": [
+                {
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "tagline": "The park is open.",
+            "title": "Jurassic World",
+            "video": false,
+            "vote_average": 6.6,
+            "vote_count": 14933
         }
     ],
-    "horarios": [{ "id": 1, "hora": "10:00" }],
-    "sessao": [{
+    "horarios": [
+        {
+            "id": 1,
+            "hora": "10:00"
+        }
+    ],
+    "sessao": [
+        {
             "id": 1,
             "dia": "2019-12-25",
             "salaId": 1,

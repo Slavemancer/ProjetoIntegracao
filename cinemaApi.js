@@ -27,14 +27,64 @@ app.post("/admin/filmes/adicionar/:id", function (req, res) {
     link = adminurl + "/" + req.params.id + "?api_key=" + key;
     console.log(link);
 
-    getData(link).then((ans) => res.send(ans));
+    adicionarFilme(link, req, res);
 
 });
 
-app.get("/admin/filmes/:query", function (req, res) {
-    link = url + "&query=" + req.params.query;
+async function adicionarFilme(link, req, res) {
+    newFilme = await getData(link);
 
-    getData(link).then((ans) => res.send(ans.results));
+    var filmes = foo["filmes"];
+    filmes.forEach(filme => {
+        if (filme.id == req.params.id) {
+            res.send("<script LANGUAGE='JavaScript'>window.alert('O filme já está disponivel');window.location.href = 'registo.html'; </script>");
+            res.end();
+        }
+    })
+    fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            obj = JSON.parse(data);
+            nextId = Object.keys(obj.filmes).length;
+            obj.filmes.push(newFilme);
+            json = JSON.stringify(obj);
+            fs.writeFile('db.json', json, 'utf8', function (err) {
+
+                if (err) {
+                    console.log(err);
+                    res.send("<script LANGUAGE='JavaScript'>window.alert('Erro durante o registo, tente novamente');window.location.href = 'registo.html'; </script>");
+                } else {
+                    console.log("chegou aqui");
+                    res.redirect(301, "http://localhost:3000/admin/index.html");
+                }
+            });
+
+        }
+    });
+}
+
+app.get("/admin/filmes/:query", function (req, res) {
+    link = url + "?api_key=" + key + "&query=" + req.params.query;
+    console.log(link);
+
+    getData(link).then((ans) => {
+        filmes = foo["filmes"];
+        filmesNovos = ans.results;
+        lista = [];
+        existe = false;
+        filmes.forEach(filme => {
+            filmesNovos.forEach(filmenovo => {
+                if (filme.id == filmenovo.id) {
+                    existe = true;
+                }
+            });
+            if (!existe) {
+                lista.push(filme);
+            }
+        });
+        res.send(ans.results)
+    });
 });
 app.get("/filmes", function (req, res) {
     filmes = foo['filmes'];
