@@ -50,9 +50,8 @@
 
                             <div class="row ">
 
-                                <div class="col-sm-3">
-                                    <img srcset="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg 2x" sizes="auto" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg"
-                                        class="" alt="The Godfather">
+                                <div class="col-sm-3" id="rp">
+                                    <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/IfB9hy4JH1eH6HEfIgIGORXi5h.jpg" alt="Card image cap">
                                 </div>
 
 
@@ -62,8 +61,10 @@
                                         <label for="dias">Selecionar Dia</label>
 
                                         <select class="form-control" id="dias">
+
+                                            <option value="#">Selecione um dia</option>
                                             
-                                    </select>
+                                        </select>
 
                                     </div>
 
@@ -93,11 +94,11 @@
 
                                     </div>
 
+                                </div>
 
+                                <div class="col-sm-4" style="margin-top: 200px; margin-left: 100px;">
 
-
-
-
+                                    <button type="button" class="btn btn-block btn-success">Reservar</button>
 
                                 </div>
 
@@ -125,6 +126,8 @@
 
     </div>
     <!-- End of Page Wrapper -->
+
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="admin/vendor/jquery/jquery.min.js"></script>

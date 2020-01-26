@@ -106,9 +106,4 @@ async function indexFilmes() {
         posterDiv.insertAdjacentHTML('beforeend', row);
     });
 
-
-
-
-
-
 }
