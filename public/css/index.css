@@ -1,5 +1,6 @@
 body {
     height: 100%;
+    overflow: auto;
     background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-photo%2Fbackground-black-wall-large-texture_29332-1042.jpg&f=1&nofb=1");
 }
 
@@ -70,30 +71,10 @@ body {
     background-color: #3e8e41;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "Poster Poster Poster Poster" "Poster Poster Poster Poster" "Footer Footer Footer Footer";
-}
-
-.Poster {
-    grid-area: Poster;
-}
-
-.Footer {
-    grid-area: Footer;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
-}
-
 .footer-basic {
     padding: 20px 0;
+    width: 100%;
+    bottom: 0;
     background-color: #ffffff;
     color: #4b4c4d;
 }
@@ -150,20 +131,4 @@ body {
     font-size: 13px;
     color: #aaa;
     margin-bottom: 0;
-}
-
-.poster-grid-container {
-    display: grid;
-    grid-template-columns: 300px 700px;
-    grid-template-rows: 1fr;
-    grid-template-areas: "poster-imagem poster-detalhes";
-}
-
-.poster-imagem {
-    grid-area: poster-imagem;
-}
-
-.poster-detalhes {
-    grid-area: poster-detalhes;
-    background-color: #3e8e41;
 }
