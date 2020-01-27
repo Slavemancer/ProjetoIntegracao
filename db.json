@@ -372,6 +372,51 @@
             "horario": 18,
             "nrLugares": 20,
             "nrOcupados": 0
+        },
+        {
+            "id": 11,
+            "dia": "2019-12-30",
+            "salaId": 1,
+            "filmeId": 475557,
+            "horario": 16,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 12,
+            "dia": "2019-12-28",
+            "salaId": 1,
+            "filmeId": 475557,
+            "horario": 18,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 14,
+            "dia": "2019-12-31",
+            "salaId": 1,
+            "filmeId": 343611,
+            "horario": 22,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 15,
+            "dia": "2020-01-14",
+            "salaId": 1,
+            "filmeId": 16234,
+            "horario": 15,
+            "nrLugares": 20,
+            "nrOcupados": 0
+        },
+        {
+            "id": 16,
+            "dia": "2020-01-16",
+            "salaId": 1,
+            "filmeId": 16234,
+            "horario": 17,
+            "nrLugares": 20,
+            "nrOcupados": 0
         }
     ],
     "reservas": [{
