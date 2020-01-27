@@ -14,18 +14,39 @@ async function init() {
     dias = document.querySelector("#dias");
     dias.addEventListener("change", addHorarios)
     filmeId = getUrlParameterByName("id");
-    sessoes = await getData("http://localhost:3000/sessoes/" + filmeId);
+    getData("http://localhost:3000/sessoes/" + filmeId).then(function(sessoes) {
 
-    sessoes.forEach(sessao => {
+        sessoes.forEach(sessao => {
 
-        value = [];
-        value.push(sessao.dia);
-        value.push(sessao.horario);
-        option = "<option value=" + value + ">" + sessao.dia + "</option>";
-        dias.insertAdjacentHTML('beforeend', option);
+            value = [];
+            value.push(sessao.dia);
+            value.push(sessao.horario);
+            value.push(sessao.filmeId);
+            option = "<option value=" + value + ">" + sessao.dia + "</option>";
+            dias.insertAdjacentHTML('beforeend', option);
+        });
     });
 
+
+
     setPoster();
+
+
+
+    getData("http://localhost:3000/loginInfo").then(function(username) {
+
+        if (username == "erro") {
+            document.getElementById("divLoginReq").style.visibility = "visible";
+            document.getElementById("divBtnRegistar").style.visibility = "hidden";
+
+        } else {
+            document.getElementById("divLoginReq").style.visibility = "hidden";
+            document.getElementById("divBtnRegistar").style.visibility = "visible";
+
+
+        }
+    });
+
 
 
 }

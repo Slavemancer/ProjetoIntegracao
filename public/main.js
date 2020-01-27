@@ -9,6 +9,15 @@ async function init() {
     await getData(url);
     document.querySelector("#procurarFilme").addEventListener("input", sugerirFilme);
     indexFilmes();
+
+    getData("http://localhost:3000/loginInfo").then(function(username) {
+
+        if (username != "erro") {
+            document.getElementById("welcomeUser").innerText = "Bem vindo " + username;
+            document.getElementById("logoutDiv").style.visibility = "visible";
+            document.getElementById("btnLogout").addEventListener("click", logout);
+        }
+    });
 }
 
 async function getData(url) {
@@ -106,4 +115,14 @@ async function indexFilmes() {
         posterDiv.insertAdjacentHTML('beforeend', row);
     });
 
+
+}
+
+function logout() {
+    console.log("chegou ao logout");
+    getData("http://localhost:3000/logout").then(function(res) {
+        if (res == "logout") {
+            window.location.replace("index.html");
+        }
+    });
 }

@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">A minha conta <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="login.html"> Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +34,20 @@
                         <a class="dropdown-item" href="?sort=ano">Este ano</a>
                     </div>
                 </li>
+
+                <li class="nav-item" style="margin-left: 350px;">
+                    <a class="nav-link disabled" style="color: black;" href="#" id="welcomeUser"></a>
+                </li>
+                <li class="nav-item" style="margin-left: 50px; visibility: hidden;" id="logoutDiv">
+                    <button type="button" class="btn btn-default" id="btnLogout">Logout</button>
+                </li>
+
             </ul>
+
+
+
+
+
             <form class="form-inline my-2 my-lg-0">
                 <input id="procurarFilme" autocomplete="off" class="form-control mr-sm-2 dropdown-toggle" list="filmes" type="text" placeholder="Procurar Filmes" aria-label="Search">
                 <div class="dropdown">

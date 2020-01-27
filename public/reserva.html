@@ -30,6 +30,8 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -39,8 +41,42 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Filmes</h1>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="#">Cinema</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                             <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login.html"> Login <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estreias</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="?sort=semana">Esta semana</a>
+                                        <a class="dropdown-item" href="?sort=mes">Este mês</a>
+                                        <a class="dropdown-item" href="?sort=ano">Este ano</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item" style="margin-left: 350px;">
+                                    <a class="nav-link disabled" style="color: black;" href="#" id="welcomeUser"></a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </nav>
+
+
+
+
+
 
                     <div class="card shadow mb-4 w-100 p-3 ">
                         <div class="card-header py-3">
@@ -86,11 +122,13 @@
                                         </select>
                                         </div>
 
-                                        <div style="margin-top: 50px;">
+                                        <div style="margin-top: 50px;" id="divBtnRegistar">
 
                                             <button type="submit" class="btn btn-block btn-success">Reservar</button>
 
                                         </div>
+
+
 
                                         <div style="margin-top: 15px;">
 
@@ -103,6 +141,13 @@
 
                                     </form>
                                 </div>
+
+
+                                <div class="col-sm-6" style="align-self: center; text-align: center;" id="divLoginReq">
+                                    <a href="login.html">Necessita de fazer login para reservar bilhetes. Clique aqui para fazer login!</a>
+
+                                </div>
+
 
                             </div>
                         </div>
@@ -117,7 +162,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2019</span>
+                        <span>O nosso cinema © 2020</span>
                     </div>
                 </div>
             </footer>

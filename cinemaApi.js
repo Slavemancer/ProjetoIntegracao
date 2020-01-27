@@ -163,7 +163,7 @@ app.post('/registo/', function(req, res) {
             res.send("<script LANGUAGE='JavaScript'>window.alert('O Utilizador/Email já está a ser utilizado');window.location.href = 'registo.html'; </script>");
             res.end();
         }
-    })
+    });
     fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
         if (err) {
             console.log(err);
@@ -209,7 +209,10 @@ app.post("/reservar/", function(req, res) {
 
     var nrBilhetes = req.body.bilhetes;
     var dia = req.body.dias.split(",")[0];
+    var filmeId = req.body.dias.split(",")[2];
     var horas = req.body.horarios;
+
+
 
     fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
         if (err) {
@@ -217,7 +220,7 @@ app.post("/reservar/", function(req, res) {
         } else {
             obj = JSON.parse(data);
             nextId = Object.keys(obj.reservas).length;
-            newReserva = { "id": nextId, "username": "temp", "dia": dia, "horas": horas, "nrBilhetes": nrBilhetes };
+            newReserva = { "id": nextId, "filmeId": filmeId, "username": req.session.username, "dia": dia, "horas": horas, "nrBilhetes": nrBilhetes };
             obj.reservas.push(newReserva);
             json = JSON.stringify(obj);
             fs.writeFile('db.json', json, 'utf8', function(err) {
@@ -235,6 +238,27 @@ app.post("/reservar/", function(req, res) {
     });
 
 
+});
+
+app.get("/loginInfo", function(req, res) {
+
+    username = req.session.username;
+    if (username) {
+        res.send(JSON.stringify(username));
+        res.end();
+    } else {
+        res.send(JSON.stringify("erro"));
+        res.end();
+    }
+
+
+
+
+});
+
+app.get("/logout", function(req, res) {
+    req.session.destroy();
+    res.send(JSON.stringify("logout"));
 });
 
 
