@@ -53,53 +53,55 @@
                                 <div class="col-sm-3" id="rp">
                                     <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/IfB9hy4JH1eH6HEfIgIGORXi5h.jpg" alt="Card image cap">
                                 </div>
-
-
                                 <div class="col-sm-3">
+                                    <form method="POST" action="reservar" class="form-group" style="margin-left: 50px;">
 
-                                    <div style="margin-top: 50px;">
-                                        <label for="dias">Selecionar Dia</label>
 
-                                        <select class="form-control" id="dias">
+                                        <div style="margin-top: 50px;">
+                                            <label for="dias">Selecionar Dia</label>
+
+                                            <select class="form-control" id="dias" name="dias">
 
                                             <option value="#">Selecione um dia</option>
                                             
                                         </select>
 
-                                    </div>
+                                        </div>
 
-                                    <div style="margin-top: 50px;">
-                                        <label for="horarios">Selecionar horário</label>
-                                        <select class="form-control" id="horarios">
+                                        <div style="margin-top: 50px;">
+                                            <label for="horarios">Selecionar horário</label>
+                                            <select class="form-control" id="horarios" name="horarios">
                                             
                                         </select>
-                                    </div>
+                                        </div>
 
-                                    <div style="margin-top: 50px;">
-                                        <label for="bilhetes">Selecionar quantidade de bilhetes</label>
-                                        <select class="form-control" id="bilhetes">
+                                        <div style="margin-top: 50px;">
+                                            <label for="bilhetes">Selecionar quantidade de bilhetes</label>
+                                            <select class="form-control" id="bilhetes" name="bilhetes">
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                         </select>
-                                    </div>
+                                        </div>
+
+                                        <div style="margin-top: 50px;">
+
+                                            <button type="submit" class="btn btn-block btn-success">Reservar</button>
+
+                                        </div>
+
+                                        <div style="margin-top: 15px;">
+
+                                            <a href="index.html" type="button" class="btn btn-block btn-primary">Voltar</a>
+
+                                        </div>
 
 
 
-                                    <div style="margin-top: 50px;">
 
-                                        <button type="button" class="btn btn-block btn-primary">Voltar</button>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-sm-4" style="margin-top: 200px; margin-left: 100px;">
-
-                                    <button type="button" class="btn btn-block btn-success">Reservar</button>
-
+                                    </form>
                                 </div>
 
                             </div>

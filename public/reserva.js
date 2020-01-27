@@ -13,8 +13,8 @@ async function getData(url) {
 async function init() {
     dias = document.querySelector("#dias");
     dias.addEventListener("change", addHorarios)
-
-    sessoes = await getData("http://localhost:3000/sessoes/3");
+    filmeId = getUrlParameterByName("id");
+    sessoes = await getData("http://localhost:3000/sessoes/" + filmeId);
 
     sessoes.forEach(sessao => {
 

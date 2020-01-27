@@ -23,7 +23,7 @@ async function getData(url) {
     });
 }
 
-app.post("/admin/filmes/adicionar/:id", function (req, res) {
+app.post("/admin/filmes/adicionar/:id", function(req, res) {
     link = adminurl + "/" + req.params.id + "?api_key=" + key;
     console.log(link);
 
@@ -49,7 +49,7 @@ async function adicionarFilme(link, req, res) {
             nextId = Object.keys(obj.filmes).length;
             obj.filmes.push(newFilme);
             json = JSON.stringify(obj);
-            fs.writeFile('db.json', json, 'utf8', function (err) {
+            fs.writeFile('db.json', json, 'utf8', function(err) {
 
                 if (err) {
                     console.log(err);
@@ -64,7 +64,7 @@ async function adicionarFilme(link, req, res) {
     });
 }
 
-app.get("/admin/filmes/:query", function (req, res) {
+app.get("/admin/filmes/:query", function(req, res) {
     link = url + "?api_key=" + key + "&query=" + req.params.query;
     console.log(link);
 
@@ -86,12 +86,12 @@ app.get("/admin/filmes/:query", function (req, res) {
         res.send(ans.results)
     });
 });
-app.get("/filmes", function (req, res) {
+app.get("/filmes", function(req, res) {
     filmes = foo['filmes'];
     res.send(filmes);
 });
 
-app.get("/filmes/id/:id", function (req, res) {
+app.get("/filmes/id/:id", function(req, res) {
     filmes = foo['filmes'];
 
     filmes.forEach(filme => {
@@ -103,7 +103,7 @@ app.get("/filmes/id/:id", function (req, res) {
     });
 });
 
-app.get("/filmes/titulo/:original_title", function (req, res) {
+app.get("/filmes/titulo/:original_title", function(req, res) {
 
     filmes = foo['filmes'];
     temp = [];
@@ -118,7 +118,7 @@ app.get("/filmes/titulo/:original_title", function (req, res) {
 
 });
 
-app.post("/login/", function (req, res) {
+app.post("/login/", function(req, res) {
 
     var username = req.body.username;
     var password = req.body.password;
@@ -153,7 +153,7 @@ app.post("/login/", function (req, res) {
 });
 
 
-app.post('/registo/', function (req, res) {
+app.post('/registo/', function(req, res) {
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
@@ -173,7 +173,7 @@ app.post('/registo/', function (req, res) {
             newUser = { "id": nextId, "username": username, "email": email, "password": password };
             obj.users.push(newUser);
             json = JSON.stringify(obj);
-            fs.writeFile('db.json', json, 'utf8', function (err) {
+            fs.writeFile('db.json', json, 'utf8', function(err) {
 
                 if (err) {
                     console.log(err);
@@ -188,10 +188,11 @@ app.post('/registo/', function (req, res) {
     });
 });
 
-app.get("/sessoes/:filmeId", function (req, res) {
+app.get("/sessoes/:filmeId", function(req, res) {
 
     sessoes = foo['sessao'];
     temp = [];
+    console.log(req.params.filmeId);
 
     sessoes.forEach(sessao => {
         if (sessao.filmeId == req.params.filmeId) {
@@ -201,6 +202,38 @@ app.get("/sessoes/:filmeId", function (req, res) {
     });
 
     res.send(temp);
+
+});
+
+app.post("/reservar/", function(req, res) {
+
+    var nrBilhetes = req.body.bilhetes;
+    var dia = req.body.dias.split(",")[0];
+    var horas = req.body.horarios;
+
+    fs.readFile('db.json', 'utf8', function readFileCallback(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            obj = JSON.parse(data);
+            nextId = Object.keys(obj.reservas).length;
+            newReserva = { "id": nextId, "username": "temp", "dia": dia, "horas": horas, "nrBilhetes": nrBilhetes };
+            obj.reservas.push(newReserva);
+            json = JSON.stringify(obj);
+            fs.writeFile('db.json', json, 'utf8', function(err) {
+
+                if (err) {
+                    console.log(err);
+                    res.send("<script LANGUAGE='JavaScript'>window.alert('Erro durante a reserva, tente novamente');window.location.href = 'reserva.html'; </script>");
+                } else {
+                    console.log("chegou aqui");
+                    res.redirect(301, "http://localhost:3000/index.html");
+                }
+            });
+
+        }
+    });
+
 
 });
 
