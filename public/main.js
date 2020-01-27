@@ -45,7 +45,7 @@ async function sugerirFilme(ev) {
         //option.value = filme.original_title;
         //filmesInput.appendChild(option);
         //option = '<option class="dropdown-item" value="' + filme.id + '"><a href="#" class="dropdown-item">' + filme.original_title + '</a></option>'
-        option = '<a id="ahref' + filme.id + '" href="#" class="dropdown-item">' + filme.original_title + '</a>';
+        option = '<a id="ahref' + filme.id + '" href="reserva.html?id=' + filme.id + '" class="dropdown-item">' + filme.original_title + '</a>';
         filmesDiv.insertAdjacentHTML('beforeend', option);
     }
     hrefs = filmesDiv.children;

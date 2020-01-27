@@ -72,6 +72,8 @@ function setPoster() {
     posterDiv = document.getElementById("rp");
     getData("http://localhost:3000/filmes/id/" + id).then(function(filme) {
 
+        console.log(filme.poster_path);
+
         posterDiv.innerHTML = '<img class="card-img-top" src="' + urlPoster + filme.poster_path + '" alt="Card image cap">';
     });
 
